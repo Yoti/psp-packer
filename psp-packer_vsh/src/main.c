@@ -273,15 +273,13 @@ int PspPack(u8 *in, int size, u8 *out, int pbp, int use_sce_header)
 	else if (header.attribute & 0x800)
 	{
 		if (pbp)
-		{
-			printf("No PBP VSH support!\n");
-			return -1;
-		}
+			header.decrypt_mode = 0x0C; // added by neur0n
+		else
+			header.decrypt_mode = 3;
 
-		header.devkitversion = 0x01050010;	// "1.50" works
+		header.devkitversion = 0x03070010;	// "1.50" works too
 		header.oe_tag = tags[MODULE_VSH].oe_tag;
 		header.tag = tags[MODULE_VSH].psp_tag;
-		header.decrypt_mode = 3;	// #include "silver.inc"
 	}
 	else
 	{
@@ -373,7 +371,7 @@ int main(int argc, char *argv[])
 	int sce_header = 0;
 	char *outfile;
 
-	printf("psp-packer by Dark_AleX / uo update by Yoti (fix)\n");
+	printf("psp-packer by Dark_AleX / uo update by Yoti and neur0n\n");
 
 	if (argc < 2 || argc > 4)
 	{
