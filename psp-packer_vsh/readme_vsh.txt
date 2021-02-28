@@ -1,1 +1,1 @@
-psp-packer by DAX, vsh support by Yoti
+psp-packer by DAX, vsh prx support by Yoti
