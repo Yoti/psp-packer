@@ -5,11 +5,11 @@
 #include <ctype.h>
 #include <dirent.h>
 #include <errno.h>
-#include <time.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <zlib.h>
+#include <time.h>
 
 #define u8	unsigned char
 #define u16 unsigned short
